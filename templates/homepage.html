@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/homepage.css')}}">
+</head>
+
+<body>
+    <div class="box">
+        Employee joining project
+
+    </div>
+    <div class="box1">
+        <button onclick="myfun()" class="pfform">PF FORM</button><br>
+        <button onclick="myfuns()" class="form12b">form12b</button><br>
+        <button onclick="myform()" class="form12b">informationform</button><br>
+        <button onclick="myforms()" class="form12b">NEW JOINING</button>
+        <!-- <script src="{{url_for('static', filename='next.js') }}"></script> -->
+        <script>
+            function myfun() {
+                var myUrl = "{{ url_for('form') }}"; 
+                window.location.href = myUrl; 
+                
+            }
+            function myfuns(){
+                var myUrls = "{{ url_for('forms') }}"; 
+                window.location.href = myUrls; 
+            }
+            function myform(){
+                var myUrls = "{{ url_for('informationform') }}"; 
+                window.location.href = myUrls; 
+            }
+            function myforms(){
+                var myUrlr = "{{ url_for('newjoining') }}"; 
+                window.location.href = myUrlr; 
+            }
+        </script>
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>
