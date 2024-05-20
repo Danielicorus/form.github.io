@@ -10,37 +10,38 @@
 </head>
 
 <body>
-  <div class="box">
-    DANIELI CORUS<br>
-    <span class="smalls">HRMS Mandatory Information FormIndia Pvt. Ltd</span>
-    <span class="upload">
-      <input type="file" id="imageInput" accept="image/jpeg, image/png" onchange="handleImageUpload()">
-    </span>
-    <div class="box2">
-      <img id="displayedImage" src="#" alt="Uploaded Image" style="display: none;" width="130px" height="130px">
-      <script>
-        function handleImageUpload() {
-          const imageInput = document.querySelector('#imageInput');
-          const displayedImage = document.querySelector('#displayedImage');
+  <form action="" method="post">
+    <div class="box">
+      DANIELI CORUS<br>
+      <span class="smalls">HRMS Mandatory Information FormIndia Pvt. Ltd</span>
+      <span class="upload">
+        <input type="file" id="imageInput" accept="image/jpeg, image/png" name="photoimage" onchange="handleImageUpload()">
+      </span>
+      <div class="box2">
+        <img id="displayedImage" src="#" alt="Uploaded Image" style="display: none;" width="130px" height="130px">
+        <script>
+          function handleImageUpload() {
+            const imageInput = document.querySelector('#imageInput');
+            const displayedImage = document.querySelector('#displayedImage');
 
-          const file = imageInput.files[0];
-          if (file) {
-            const fileReader = new FileReader();
-            fileReader.addEventListener('load', () => {
-              const uploadedImage = fileReader.result;
-              displayedImage.src = uploadedImage;
-              displayedImage.style.display = 'block'; // Show the image
-            });
+            const file = imageInput.files[0];
+            if (file) {
+              const fileReader = new FileReader();
+              fileReader.addEventListener('load', () => {
+                const uploadedImage = fileReader.result;
+                displayedImage.src = uploadedImage;
+                displayedImage.style.display = 'block'; // Show the image
+              });
 
-            // Read the selected file as a data URL
-            fileReader.readAsDataURL(file);
+              // Read the selected file as a data URL
+              fileReader.readAsDataURL(file);
+            }
           }
-        }
-      </script>
+        </script>
+      </div>
+      .
     </div>
-    .
-  </div>
-  <form>
+
     <table border="0px" class="form-table" width="300%">
       <tr>
         <th rowspan="3">Name of the Employee (In BLOCK LETTER)</th>
@@ -90,7 +91,7 @@
       <tr>
         <tH>Sex</th>
         <td colspan="6">
-          <select name="sex">
+          <select name="sex" >
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">Other</option>
@@ -99,7 +100,8 @@
       </tr>
       <tr>
         <td>Place of Birth</td>
-        <td colspan="6"><input type="text" name="birthplace"></td>
+        <td colspan="6"><input type="text" name="birthplace"  onfocus="(this.type='date')"
+          onblur="if(!this.value) this.type='text'" max="9999-12-31"></td>
       </tr>
       <tr>
         <td>Blood Group</td>
@@ -179,7 +181,7 @@
       </tr>
       <tr>
         <td>Contact Number</td>
-        <td colspan="6"><input type="text" name="contact_number" max="9999-12-31"></td>
+        <td colspan="6"><input type="text" name="contact_number" ></td>
       </tr>
       <tr>
         <td>Mobile Number</td>
@@ -199,7 +201,7 @@
         <th>Name of School/College/University</th>
         <th>Specialization</th>
         <th>Passing Year Month</th>
-        <th>Year</th>
+        <!-- <th>Year</th> -->
         <th>Percentage</th>
         <th>Grade</th>
       </tr>
@@ -210,7 +212,7 @@
           <td colspan="1"><input type="text" name="SSCName"></td>
           <td colspan="1"><input type="text" name="SSCSpecialization"></td>
           <td colspan="1"><input type="month" name="SSCSPassingYearMonth" max="9999-12"></td>
-          <td colspan="1"><input type="text" name="SSCYear"></td>
+          <!-- <td colspan="1"><input type="text" name="SSCYear"></td> -->
           <td colspan="1"><input type="text" name="SSCPercentage"></td>
           <td colspan="1"><input type="text" name="SSCGrade"></td>
         </tr>
@@ -219,7 +221,7 @@
           <td colspan="1"><input type="text" name="HSCName"></td>
           <td colspan="1"><input type="text" name="HSCSpecialization"></td>
           <td colspan="1"><input type="month" max="9999-12" name="HSCPassingYearMonth"></td>
-          <td colspan="1"><input type="text" name="HSCYear"></td>
+          <!-- <td colspan="1"><input type="text" name="HSCYear"></td> -->
           <td colspan="1"><input type="text" name="HSCPercentage"></td>
           <td colspan="1"><input type="text" name="HSCGrade"></td>
         </tr>
@@ -228,7 +230,7 @@
           <td colspan="1"><input type="text" name="GraduationName"></td>
           <td colspan="1"><input type="text" name="GraduationSpecialization"></td>
           <td colspan="1"><input type="month" max="9999-12" name="GraduationPassingYearMonth"></td>
-          <td colspan="1"><input type="text" name="GraduationYear"></td>
+          <!-- <td colspan="1"><input type="text" name="GraduationYear"></td> -->
           <td colspan="1"><input type="text" name="GraduationPercentage"></td>
           <td colspan="1"><input type="text" name="GraduationGrade"></td>
 
@@ -238,7 +240,7 @@
           <td colspan="1"><input type="text" name="DiplomaName"></td>
           <td colspan="1"><input type="text" name="DiplomaSpecialization"></td>
           <td colspan="1"><input type="month" max="9999-12" name="DiplomaPassingYearMonth"></td>
-          <td colspan="1"><input type="text" name="DiplomaYear"></td>
+          <!-- <td colspan="1"><input type="text" name="DiplomaYear"></td> -->
           <td colspan="1"><input type="text" name="DiplomaPercentage"></td>
           <td colspan="1"><input type="text" name="DiplomaGrade"></td>
 
@@ -248,7 +250,7 @@
           <td colspan="1"><input type="text" name="DegreeName"></td>
           <td colspan="1"><input type="text" name="DegreeSpecialization"></td>
           <td colspan="1"><input type="month" max="9999-12" name="DegreePassingYearMonth"></td>
-          <td colspan="1"><input type="text" name="DegreeYear"></td>
+          <!-- <td colspan="1"><input type="text" name="DegreeYear"></td> -->
           <td colspan="1"><input type="text" name="DegreePercentage"></td>
           <td colspan="1"><input type="text" name="DegreeGrade"></td>
 
@@ -258,7 +260,7 @@
           <td colspan="1"><input type="text" name="MastersorPostGraduationName"></td>
           <td colspan="1"><input type="text" name="MastersorPostGraduationSpecialization"></td>
           <td colspan="1"><input type="month" max="9999-12" name="MastersorPostGraduationPassingYearMonth"></td>
-          <td colspan="1"><input type="text" name="MastersorYear"></td>
+          <!-- <td colspan="1"><input type="text" name="MastersorYear"></td> -->
           <td colspan="1"><input type="text" name="MastersorPercentage"></td>
           <td colspan="1"><input type="text" name="MastersorGrade"></td>
 
@@ -268,7 +270,7 @@
           <td colspan="1"><input type="text" name="DoctorateName"></td>
           <td colspan="1"><input type="text" name="DoctorateSpecialization"></td>
           <td colspan="1"><input type="month" max="9999-12" name="DoctoratePassingYearMonth"></td>
-          <td colspan="1"><input type="text" name="DoctorateYear"></td>
+          <!-- <td colspan="1"><input type="text" name="DoctorateYear"></td> -->
           <td colspan="1"><input type="text" name="DoctoratePercentage"></td>
           <td colspan="1"><input type="text" name="DoctorateGrade"></td>
 
@@ -276,9 +278,9 @@
         <tr>
           <td>Others</td>
           <td colspan="1"><input type="text" name="OthersName"></td>
-          <td colspan="1"><input type="text" name="OthersName"></td>
+          <td colspan="1"><input type="text" name="OthersSpecialization"></td>
           <td colspan="1"><input type="month" max="9999-12" name="OthersPassingYearMonth"></td>
-          <td colspan="1"><input type="text" name="OthersYear"></td>
+          <!-- <td colspan="1"><input type="text" name="OthersYear"></td> -->
           <td colspan="1"><input type="text" name="OthersPercentage"></td>
           <td colspan="1"><input type="text" name="OthersGrade"></td>
 
@@ -357,6 +359,11 @@
         <th>Employee Signature </th>
         <td colspan="3"><input type="text" name="signature"></td>
       </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td> <input type="submit" value="submit" class="submit" ></td>
+      </tr>
 
 
       <script>
@@ -383,14 +390,10 @@
       </script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
-
-
-
-
-
-
-
+    </table>
+  
+  </form>
+  
 </body>
 
 </html>

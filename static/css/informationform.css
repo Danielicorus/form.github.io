@@ -125,3 +125,16 @@ td input[type="email"] {
 .smalls {
     font-size: 20px;
 }
+
+.submit{
+    border: 1px solid black;
+    border-radius:12px ;
+    width: 80%;
+    height: 50px;
+
+
+}
+
+.submit:active{
+    background-color: aqua;
+}

@@ -14,6 +14,7 @@ con = mysql.connect()
 cur = con.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS providentfund (id INT AUTO_INCREMENT PRIMARY KEY, mr_ms_mrs text, name text, dateofbirth date, fatherandhusband text, relationinrespect text, gender text, mobilenumber integer, email text, emppovidentfunds text, emppensionscheme text, uaborprevious text, account text, dateofexit date, certificateissued text, pensionpayment text, internationworker text, india text, otherthanindia text, passport text,  passportfrom date , passportto date, educationalqualification text, maritalstatus varchar(225), specially varchar(225), category varchar(225), bankkycnumber text, banknumber text, bankremark text, nprkycnumber text, nprnumber text, nprremark text, permanentkycnumber text, permanentnumber text,  permanentremark text, passportkycnumber text, passportnumber text, passportremark text, drivinglicencekycnumber text, drivinglicencenumber text , drivinglicenceremark text, electioncardkycnumber text, electioncardnumber text, electioncardremark text,  rationcardkycnumber text, rationcardnumber text, rationcardremark text, esiccardkycnumber text, esiccardnumber text, esiccardremark text)")
 cur.execute("CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY , username text , password text)")
+cur.execute("CREATE TABLE IF NOT EXISTS informationform (id INT AUTO_INCREMENT PRIMARY KEY , first_name text, middle_name text, surname text, employee_code text, reporting_manager text, department text, permanent_address text, PostalCodeorPinCode text, Present_Address text, dateofbirth date, sex text, birthplace text, bloodgroup text, nationality text, religion text,  pan text, language text, maritalstatus text, marriage_date date, spouse_name text, spouse_dob date, children_count text, first_child_name text, first_child_dob date,  second_child_name text, second_child_dob date, third_child_name text,  third_child_dob date, contact_number text,  mobile_number text, emergency_contact text, email_id text, SSCName text, SSCSpecialization text, SSCSPassingYearMonth date, SSCPercentage text, SSCGrade text, HSCName text, HSCSpecialization text,    HSCPassingYearMonth date, HSCPercentage text , HSCGrade text, GraduationName text, GraduationSpecialization text,   GraduationPassingYearMonth date, GraduationPercentage text, GraduationGrade text, DiplomaName text, DiplomaSpecialization text, DiplomaPassingYearMonth date, DiplomaPercentage text, DiplomaGrade text, DegreeName text, DegreeSpecialization text,  DegreePassingYearMonth date, DegreePercentage text, DegreeGrade text, MastersorPostGraduationName text , MastersorPostGraduationSpecialization text,  MastersorPostGraduationPassingYearMonth date, MastersorPercentage text, MastersorGrade text, DoctorateName text, DoctorateSpecialization text,  DoctoratePassingYearMonth date, DoctoratePercentage text, DoctorateGrade text, OthersName text, OthersSpecialization text,   OthersPassingYearMonth date,  OthersPercentage text, OthersGrade text, aOrganization text, aDesignation text, aLocation text, aDurationfrom date, aDurationto date, bOrganization text, bDesignation text, bLocation text, bDurationfrom date, bDurationto date, cOrganization text, cDesignation text, cLocation text, cDurationfrom date, cDurationto date, dOrganization text, dDesignation text, dLocation text, dDurationfrom date, dDurationto date, eOrganization text, eDesignation text, eLocation text, eDurationfrom date, eDurationto date, todaydate date)")
 con.commit()
 cur.close()
 con.close()
@@ -167,6 +168,21 @@ def forms():
 @app.route('/informationform')
 def informationform():
     return render_template("informationform.html")
+
+
+# @app.route('/informationforminsert', methods=['POST'])
+# def informationforminsert():
+#     if request.method=='POST':
+#        first_name=request.form["first_name"]
+#        middle_name=request.form["middle_name"]
+#        surname=request.form["surname"]
+       
+#         # try:
+            
+#             # con = mysql.connect()
+#             # cur = con.cursor()
+#             # cur.execute("insert")
+            
 
 
 
