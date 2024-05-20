@@ -176,12 +176,21 @@ def informationform():
 #        first_name=request.form["first_name"]
 #        middle_name=request.form["middle_name"]
 #        surname=request.form["surname"]
+#        employee_code=request.form["employee_code"]
+#        reporting_manager=request.form["reporting_manager"]
+#        department=request.form["department"]
+#        permanent_address=request.form["permanent_address"]
+#        PostalCodeorPinCode=request.form["PostalCodeorPinCode"]
+#        Present_Address=request.form["Present_Address"]
        
-#         # try:
+       
+       
+       
+        # try:
             
-#             # con = mysql.connect()
-#             # cur = con.cursor()
-#             # cur.execute("insert")
+            # con = mysql.connect()
+            # cur = con.cursor()
+            # cur.execute("insert")
             
 
 
